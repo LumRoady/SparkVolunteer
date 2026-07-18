@@ -1,0 +1,44 @@
+/* ====== 表单字段 ====== */
+.field {
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid var(--color-divider);
+}
+.field:first-child { padding-top: 0; }
+.field:last-child { border-bottom: none; padding-bottom: 0; }
+
+.field-label {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--color-title);
+  display: block;
+  margin-bottom: 14rpx;
+}
+
+.field-input {
+  width: 100%;
+  font-size: var(--font-lg);
+  color: var(--color-body);
+  height: 80rpx;
+}
+
+.field-area {
+  width: 100%;
+  min-height: 120rpx;
+  font-size: var(--font-lg);
+  color: var(--color-body);
+  line-height: 1.6;
+}
+
+/* ====== 行内字段 ====== */
+.field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid var(--color-divider);
+}
+
+.field-value {
+  font-size: var(--font-md);
+  color: var(--color-hint);
+}

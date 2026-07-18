@@ -1,0 +1,136 @@
+.page {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding: 32rpx 24rpx 60rpx;
+}
+
+/* ========== 等级卡片 ========== */
+.level-card {
+  background: linear-gradient(135deg, #ff6b6b, #e55a5a);
+  border-radius: 20rpx;
+  padding: 40rpx 32rpx 32rpx;
+  text-align: center;
+  margin-bottom: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(255,107,107,0.25);
+}
+.level-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 48rpx;
+  font-weight: 800;
+  padding: 12rpx 36rpx;
+  border-radius: 40rpx;
+  margin-bottom: 12rpx;
+}
+.level-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  display: block;
+  margin-bottom: 20rpx;
+}
+.level-bar-wrap {
+  width: 100%;
+  height: 12rpx;
+  background: rgba(255,255,255,0.3);
+  border-radius: 6rpx;
+  overflow: hidden;
+  margin-bottom: 14rpx;
+}
+.level-bar {
+  height: 100%;
+  background: #fff;
+  border-radius: 6rpx;
+  transition: width 0.5s;
+}
+.level-next {
+  font-size: 24rpx;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ========== 数据概览 ========== */
+.stats-row {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 28rpx;
+}
+.stat-box {
+  flex: 1;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 28rpx 12rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.04);
+}
+.stat-num {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #2d3436;
+  display: block;
+}
+.stat-label {
+  font-size: 22rpx;
+  color: #b2bec3;
+  margin-top: 6rpx;
+  display: block;
+}
+
+/* ========== 勋章 ========== */
+.badge-section {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 28rpx 24rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.04);
+}
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 20rpx;
+}
+.badge-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+.badge-card {
+  width: calc((100% - 16rpx) / 2);
+  padding: 24rpx 16rpx;
+  border-radius: 16rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.badge-card.unlocked {
+  background: #fff5f5;
+  border: 2rpx solid #ff6b6b;
+}
+.badge-card.locked {
+  background: #f8f9fa;
+  border: 2rpx solid #e0e0e0;
+  opacity: 0.6;
+}
+.badge-icon {
+  font-size: 48rpx;
+  display: block;
+  margin-bottom: 8rpx;
+}
+.badge-title {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #2d3436;
+  display: block;
+  margin-bottom: 4rpx;
+}
+.badge-desc {
+  font-size: 20rpx;
+  color: #b2bec3;
+  display: block;
+  margin-bottom: 10rpx;
+}
+.badge-status {
+  font-size: 22rpx;
+  font-weight: 600;
+}
+.badge-card.unlocked .badge-status { color: #2ed573; }
+.badge-card.locked .badge-status { color: #b2bec3; }

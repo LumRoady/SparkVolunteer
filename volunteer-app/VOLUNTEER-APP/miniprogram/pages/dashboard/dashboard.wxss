@@ -1,0 +1,249 @@
+/* 个人中心 */
+.dashboard-container {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+/* 用户信息区 */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48rpx var(--spacing-lg) var(--spacing-lg);
+  background: var(--color-white);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.avatar-container {
+  margin-bottom: var(--spacing-md);
+}
+
+.avatar {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: var(--radius-circle);
+  background: var(--color-info-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar-icon { font-size: 72rpx; }
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-details {
+  width: 100%;
+  text-align: center;
+}
+
+.user-name {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-title);
+  margin-bottom: var(--spacing-xs);
+}
+
+.role-badges {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+  padding: 0 var(--spacing-lg);
+}
+
+.role-badge {
+  font-size: var(--font-sm);
+  color: var(--color-hint);
+}
+
+.role-badge.left  { text-align: right; }
+.role-badge.right { text-align: left; padding-left: var(--spacing-md); border-left: 1rpx solid var(--color-border); }
+
+/* 组织单位 */
+.user-organizations {
+  margin-top: var(--spacing-sm);
+}
+
+.organization-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  justify-content: center;
+  margin-top: 8rpx;
+}
+
+.organization-item {
+  font-size: var(--font-xs);
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+  padding: 6rpx 20rpx;
+  border-radius: var(--radius-round);
+}
+
+/* 用户统计行 */
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1rpx solid var(--color-divider);
+}
+
+.stat-left {
+  text-align: center;
+}
+
+.user-stats .stat-label {
+  font-size: var(--font-xs);
+  color: var(--color-hint);
+  margin-bottom: 4rpx;
+}
+
+.user-stats .stat-value {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* 每日签到 */
+.checkin-section {
+  margin: 0 var(--spacing-md) var(--spacing-md);
+}
+
+.checkin-container {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.checkin-left {
+  flex: 1;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+}
+
+.checkin-right {
+  flex: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.checkin-streak-num {
+  font-size: 56rpx;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+.checkin-streak-label {
+  font-size: var(--font-sm);
+  color: var(--color-hint);
+  margin-top: 8rpx;
+}
+
+.checkin-title {
+  font-size: var(--font-md);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  color: var(--color-white);
+}
+
+.checkin-btn {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16rpx 40rpx;
+  font-size: var(--font-md);
+  font-weight: 700;
+}
+
+.checkin-btn::after { border: none; }
+
+/* 数据统计 */
+.stats-section {
+  display: flex;
+  background: var(--color-white);
+  margin: 0 var(--spacing-md) var(--spacing-md);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-item {
+  flex: 1;
+  padding: var(--spacing-md) 0;
+  text-align: center;
+  border-right: 1rpx solid var(--color-divider);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-value {
+  display: block;
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6rpx;
+}
+
+.stat-label {
+  font-size: var(--font-sm);
+  color: var(--color-hint);
+}
+
+/* 菜单 */
+.menu-section {
+  margin: 0 var(--spacing-md) var(--spacing-md);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-lg);
+  border-bottom: 1rpx solid var(--color-divider);
+}
+
+.menu-item:last-child { border-bottom: none; }
+
+.menu-icon {
+  font-size: 36rpx;
+  margin-right: var(--spacing-md);
+  width: 48rpx;
+  text-align: center;
+}
+
+.menu-label {
+  flex: 1;
+  font-size: var(--font-md);
+  color: var(--color-title);
+}
+
+.menu-arrow {
+  font-size: var(--font-md);
+  color: #c0c0c0;
+}

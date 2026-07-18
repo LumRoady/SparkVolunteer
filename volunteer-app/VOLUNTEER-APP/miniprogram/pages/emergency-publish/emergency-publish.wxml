@@ -1,0 +1,47 @@
+<view class="container emergency-theme">
+  <!-- 顶部主题区域 -->
+  <view class="theme-header">
+    <text class="theme-title">紧急求助</text>
+    <text class="theme-hint">SOS 紧急呼救，志愿者将优先响应</text>
+  </view>
+
+  <!-- 表单卡片 -->
+  <view class="card">
+    <view class="field">
+      <text class="field-label">需求标题</text>
+      <input class="field-input" placeholder="简单说明需要什么帮助" value="{{title}}" bindinput="onInput" data-field="title" />
+    </view>
+    <view class="field">
+      <text class="field-label">详细描述</text>
+      <textarea class="field-area" placeholder="描述具体情况，方便志愿者了解" value="{{description}}" bindinput="onInput" data-field="description" maxlength="300" auto-height />
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="field">
+      <text class="field-label">服务地址</text>
+      <view class="address-row">
+        <input class="field-input" placeholder="您的地址" value="{{location}}" bindinput="onInput" data-field="location" />
+        <view class="location-btn {{locating?'loading':''}}" bindtap="getLocation">
+          <view class="pin-icon"></view>
+        </view>
+      </view>
+    </view>
+    <view class="field" style="border:none">
+      <text class="field-label">联系电话</text>
+      <input class="field-input" type="number" placeholder="方便志愿者联系您" value="{{contact}}" bindinput="onInput" data-field="contact" maxlength="11" />
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="field-row" style="border:none;padding-bottom:0">
+      <text class="field-label" style="margin-bottom:0">需要志愿者上门</text>
+      <switch checked="{{needVisit}}" bindchange="onSwitchChange" color="#ff3b30" />
+    </view>
+  </view>
+
+  <!-- 发布按钮 -->
+  <button class="submit-btn emergency-btn" bindtap="submitTask" disabled="{{submitting || !canSubmit}}">
+    {{submitting ? '发布中...' : '立即发布紧急求助'}}
+  </button>
+</view>

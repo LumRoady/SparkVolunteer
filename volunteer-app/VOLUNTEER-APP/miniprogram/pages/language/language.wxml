@@ -1,0 +1,14 @@
+<view class="language-container">
+  <view class="language-content">
+    <view class="language-list">
+      <view class="language-item {{selectedLanguage === 'zh-CN' ? 'active' : ''}}" bindtap="selectLanguage" data-lang="zh-CN">
+        <text class="language-name">简体中文</text>
+        <text class="language-check" wx:if="{{selectedLanguage === 'zh-CN'}}">✓</text>
+      </view>
+      <view class="language-item {{selectedLanguage === 'en-US' ? 'active' : ''}}" bindtap="selectLanguage" data-lang="en-US">
+        <text class="language-name">English</text>
+        <text class="language-check" wx:if="{{selectedLanguage === 'en-US'}}">✓</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,67 @@
+<view class="privacy-container">
+  <view class="privacy-content">
+    <view class="privacy-section">
+      <text class="section-title">1. 引言</text>
+      <text class="section-content">星火众擎志愿者服务平台（以下简称"平台"）致力于保护用户的个人信息和隐私。本隐私政策描述了平台如何收集、使用、存储和保护用户个人信息。</text>
+    </view>
+    
+    <view class="privacy-section">
+      <text class="section-title">2. 信息收集</text>
+      <text class="section-content">2.1 注册信息：用户在注册时提供的昵称、手机号码等信息。
+
+2.2 使用信息：用户使用平台服务时产生的信息，如任务参与记录、签到记录等。
+
+2.3 设备信息：平台可能收集用户设备的型号、操作系统版本等信息，用于改善服务质量。</text>
+    </view>
+    
+    <view class="privacy-section">
+      <text class="section-title">3. 信息使用</text>
+      <text class="section-content">3.1 提供服务：平台使用用户信息为用户提供志愿者服务相关功能。
+
+3.2 消息通知：平台使用用户信息向用户发送任务通知、系统消息等。
+
+3.3 数据分析：平台可能对用户信息进行分析，用于改善服务内容和用户体验。
+
+3.4 安全保障：平台使用用户信息保障账户安全，防止欺诈行为。</text>
+    </view>
+    
+    <view class="privacy-section">
+      <text class="section-title">4. 信息存储与保护</text>
+      <text class="section-content">4.1 存储方式：平台将用户信息存储在安全的服务器中。
+
+4.2 保护措施：平台采取加密传输、访问控制等措施保护用户信息安全。
+
+4.3 存储期限：平台将在法律法规规定的期限内存储用户信息，或为实现服务目的所必需的期限内存储。</text>
+    </view>
+    
+    <view class="privacy-section">
+      <text class="section-title">5. 信息共享</text>
+      <text class="section-content">5.1 平台不会向第三方共享用户个人信息，除非获得用户明确授权或法律法规要求。
+
+5.2 平台可能与关联公司、服务提供商共享必要的用户信息，用于提供服务和改善用户体验。
+
+5.3 共享信息时，平台会采取必要措施确保信息安全。</text>
+    </view>
+    
+    <view class="privacy-section">
+      <text class="section-title">6. 用户权利</text>
+      <text class="section-content">6.1 访问权：用户有权访问自己的个人信息。
+
+6.2 修改权：用户有权修改自己的个人信息。
+
+6.3 删除权：用户有权删除自己的个人信息，法律法规另有规定的除外。
+
+6.4 撤回授权：用户有权撤回对平台收集、使用个人信息的授权。</text>
+    </view>
+    
+    <view class="privacy-section">
+      <text class="section-title">7. 隐私政策的变更</text>
+      <text class="section-content">平台有权根据法律法规的变化和业务发展需要修改本隐私政策。修改后的隐私政策将在平台上公布，用户继续使用平台服务即视为接受修改后的隐私政策。</text>
+    </view>
+    
+    <view class="privacy-section">
+      <text class="section-title">8. 联系我们</text>
+      <text class="section-content">如果用户对本隐私政策有任何疑问，可以通过平台的联系我们功能与平台客服团队联系。</text>
+    </view>
+  </view>
+</view>

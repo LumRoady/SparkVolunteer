@@ -1,0 +1,131 @@
+# =============================================================================
+# docker-compose.yml — 星火智慧养老志愿服务管理系统
+#
+# 一键启动: docker-compose up -d
+# 停止清空: docker-compose down -v
+#
+# 前置条件:
+#   1. 安装 Docker Desktop 或 Docker Engine
+#   2. 复制 .env.example 为 .env 并按需修改密码/密钥
+#   3. 确保端口 80/8084 未被占用（数据库/Redis 不对外开放端口）
+# =============================================================================
+version: '3.8'
+
+services:
+  # ===========================================================================
+  # MySQL 8.0 — 数据库服务（仅内网可访问）
+  # ===========================================================================
+  mysql:
+    image: mysql:8.0
+    container_name: spark-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:?必须设置 DB_PASSWORD}
+      MYSQL_DATABASE: volunteer_db
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+    # 不映射宿主机端口，仅在 spark-net 内网可访问
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./spark-volunteer/sql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    networks:
+      - spark-net
+
+  # ===========================================================================
+  # Redis 7 — 缓存 & 会话管理（仅内网可访问）
+  # ===========================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: spark-redis
+    restart: always
+    # 不映射宿主机端口，仅在 spark-net 内网可访问
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru ${REDIS_PASSWORD:+--requirepass ${REDIS_PASSWORD}}
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", ${REDIS_PASSWORD:+-a} ${REDIS_PASSWORD:-} "ping" || "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - spark-net
+
+  # ===========================================================================
+  # Spring Boot — 后端服务
+  # 启动依赖 MySQL/Redis 健康检查通过
+  # ===========================================================================
+  backend:
+    build:
+      context: ./spark-volunteer
+      dockerfile: Dockerfile
+    container_name: spark-backend
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-prod}
+      DB_URL: jdbc:mysql://mysql:3306/volunteer_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:?}
+      JWT_SECRET: ${JWT_SECRET:?必须设置 JWT_SECRET}
+      JWT_EXPIRATION: ${JWT_EXPIRATION:-86400000}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-}
+      SERVER_PORT: 8084
+      WECHAT_APPID: ${WECHAT_APPID:-}
+      WECHAT_SECRET: ${WECHAT_SECRET:-}
+      WECHAT_TEMPLATE_ID: ${WECHAT_TEMPLATE_ID:-}
+    ports:
+      - "8084:8084"
+    volumes:
+      - spark_logs:/app/logs
+    networks:
+      - spark-net
+
+  # ===========================================================================
+  # Nginx — 前端静态资源 + API 反向代理
+  # ===========================================================================
+  frontend:
+    build:
+      context: ./volunteer-app
+      dockerfile: Dockerfile
+    container_name: spark-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    networks:
+      - spark-net
+
+# =============================================================================
+# 持久化卷
+# =============================================================================
+volumes:
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local
+  spark_logs:
+    driver: local
+
+# =============================================================================
+# 网络
+# =============================================================================
+networks:
+  spark-net:
+    driver: bridge

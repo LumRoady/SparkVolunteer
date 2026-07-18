@@ -1,0 +1,308 @@
+/* 远程帮助页面样式 */
+
+.remote-help-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+  padding: 20rpx;
+}
+
+.header {
+  text-align: center;
+  padding: 40rpx 0 30rpx;
+}
+
+.logo-text {
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #7f8c8d;
+}
+
+.content {
+  flex: 1;
+}
+
+.section {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.bluetooth-section {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border: 2rpx solid #2196f3;
+}
+
+.section-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 25rpx;
+}
+
+.bluetooth-status {
+  margin-bottom: 30rpx;
+}
+
+.bluetooth-status .status-indicator {
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 25rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.bluetooth-status .device-info {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20rpx;
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
+}
+
+.bluetooth-status .device-info .info-item {
+  display: block;
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.bluetooth-status .no-device {
+  font-size: 26rpx;
+  color: #999;
+  font-style: italic;
+}
+
+.bluetooth-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15rpx;
+}
+
+.bluetooth-actions .action-btn {
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.bluetooth-actions .connect {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.bluetooth-actions .disconnect {
+  background: linear-gradient(135deg, #f44336, #da190b);
+  color: white;
+}
+
+.bluetooth-actions .test {
+  background: linear-gradient(135deg, #2196F3, #0b7dda);
+  color: white;
+}
+
+.bluetooth-actions .action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-info {
+  margin-bottom: 20rpx;
+}
+
+.button-info .button-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.button-info .button-item:last-child {
+  border-bottom: none;
+}
+
+.button-info .button-icon {
+  font-size: 60rpx;
+  margin-right: 20rpx;
+  width: 80rpx;
+  text-align: center;
+}
+
+.button-info .button-icon.primary {
+  font-size: 80rpx;
+}
+
+.button-info .button-desc {
+  flex: 1;
+}
+
+.button-info .button-name {
+  display: block;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 8rpx;
+}
+
+.button-info .button-detail {
+  font-size: 26rpx;
+  color: #7f8c8d;
+  line-height: 1.4;
+}
+
+.steps {
+  margin-bottom: 20rpx;
+}
+
+.steps .step-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25rpx;
+}
+
+.steps .step-item:last-child {
+  margin-bottom: 0;
+}
+
+.steps .step-num {
+  width: 50rpx;
+  height: 50rpx;
+  background: #3498db;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.steps .step-desc {
+  font-size: 28rpx;
+  color: #34495e;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.safety-tips {
+  margin-bottom: 20rpx;
+}
+
+.safety-tips .tip-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.safety-tips .tip-item:last-child {
+  margin-bottom: 0;
+}
+
+.safety-tips .tip-icon {
+  font-size: 36rpx;
+  margin-right: 20rpx;
+  width: 50rpx;
+  text-align: center;
+}
+
+.safety-tips .tip-text {
+  font-size: 28rpx;
+  color: #e74c3c;
+  flex: 1;
+}
+
+.action-section {
+  padding: 0 20rpx 30rpx;
+}
+
+.action-btn {
+  width: 100%;
+  height: 80rpx;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.action-btn::after {
+  border: none;
+}
+
+.logs-section {
+  margin-top: 30rpx;
+}
+
+.logs-section .logs-container {
+  height: 300rpx;
+  background-color: white;
+  padding: 15rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.logs-section .log-item {
+  display: block;
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 8rpx;
+  line-height: 1.4;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .remote-help-container {
+    padding: 15rpx;
+  }
+  
+  .header {
+    padding: 30rpx 0 20rpx;
+  }
+  
+  .logo-text {
+    font-size: 32rpx;
+  }
+  
+  .subtitle {
+    font-size: 24rpx;
+  }
+  
+  .section {
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  .section-title {
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  .action-btn {
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 26rpx;
+  }
+  
+  .bluetooth-actions .action-btn {
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 26rpx;
+  }
+}

@@ -1,0 +1,55 @@
+.language-container {
+  padding: 20rpx;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  margin-bottom: 30rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.language-content {
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.language-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.language-item:last-child {
+  border-bottom: none;
+}
+
+.language-item.active {
+  background-color: #f8f9fa;
+  border-radius: 8rpx;
+}
+
+.language-name {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.language-check {
+  font-size: 28rpx;
+  color: #ff6b6b;
+  font-weight: bold;
+}

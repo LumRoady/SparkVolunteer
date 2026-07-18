@@ -1,0 +1,106 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+  padding: 40rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  flex: 1;
+  text-align: center;
+}
+
+.change-task {
+  font-size: 24rpx;
+  color: #ff6b6b;
+  font-weight: bold;
+  padding: 10rpx 20rpx;
+  border-radius: 12rpx;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.change-task:hover {
+  background: #e9ecef;
+  transform: translateY(-2rpx);
+}
+
+.change-task:active {
+  transform: translateY(0);
+  opacity: 0.8;
+}
+
+.challenge-detail {
+  background: white;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.05);
+  flex: 1;
+}
+
+.challenge-info {
+  margin-bottom: 40rpx;
+}
+
+.info-label {
+  display: block;
+  font-size: 24rpx;
+  color: #7f8c8d;
+  margin-bottom: 15rpx;
+}
+
+.info-value {
+  display: block;
+  font-size: 28rpx;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+.info-value.completed {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.info-value.pending {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.challenge-actions {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 60rpx;
+}
+
+.action-btn {
+  flex: 1;
+  background: #f8f9fa;
+  color: #2c3e50;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.action-btn.primary {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+}
+
+.action-btn::after {
+  border: none;
+}

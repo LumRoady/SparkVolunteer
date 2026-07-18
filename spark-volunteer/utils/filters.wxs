@@ -1,0 +1,33 @@
+/**
+ * WXS 工具函数 - 用于 WXML 模板中的数据处理
+ * WXML 中不能调用 JS 方法（如 .toLowerCase()），需要通过 WXS 模块来实现
+ */
+
+/**
+ * 将字符串转为小写
+ * @param {string} str
+ * @returns {string}
+ */
+function toLowerCase(str) {
+  // 防御性处理：如果传入值不是字符串，先转换
+  if (str === undefined || str === null) {
+    return '';
+  }
+  // WXS 中 String 的 toLowerCase 方法可用
+  return ('' + str).toLowerCase();
+}
+
+/**
+ * 将字符串转为大写
+ */
+function toUpperCase(str) {
+  if (str === undefined || str === null) {
+    return '';
+  }
+  return ('' + str).toUpperCase();
+}
+
+module.exports = {
+  toLowerCase: toLowerCase,
+  toUpperCase: toUpperCase
+};

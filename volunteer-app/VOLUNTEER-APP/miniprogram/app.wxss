@@ -1,0 +1,303 @@
+/* ============================================
+   星火众擎 — 全局设计规范
+   所有页面共享的基础样式和设计令牌
+   ============================================ */
+
+/* ---------- 设计令牌（Design Tokens）---------- */
+page {
+  /* 主色调 */
+  --color-primary: #ff6b6b;
+  --color-primary-light: #ff8e8e;
+  --color-primary-dark: #e55a5a;
+  --color-primary-bg: #fff5f5;
+
+  /* 功能色 */
+  --color-success: #4CAF50;
+  --color-success-bg: #f6ffed;
+  --color-warning: #FF9800;
+  --color-warning-bg: #fffbe6;
+  --color-info: #2196F3;
+  --color-info-bg: #e3f2fd;
+  --color-danger: #f44336;
+
+  /* 中性色 */
+  --color-title: #333333;
+  --color-body: #666666;
+  --color-hint: #999999;
+  --color-border: #E5E5E5;
+  --color-divider: #f0f0f0;
+  --color-bg: #F5F5F5;
+  --color-white: #FFFFFF;
+
+  /* 间距 */
+  --spacing-xs: 8rpx;
+  --spacing-sm: 16rpx;
+  --spacing-md: 24rpx;
+  --spacing-lg: 32rpx;
+  --spacing-xl: 48rpx;
+
+  /* 圆角 */
+  --radius-sm: 8rpx;
+  --radius-md: 12rpx;
+  --radius-lg: 16rpx;
+  --radius-xl: 20rpx;
+  --radius-round: 44rpx;
+  --radius-circle: 50%;
+
+  /* 阴影 */
+  --shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.10);
+
+  /* 字号 */
+  --font-xs: 22rpx;
+  --font-sm: 24rpx;
+  --font-md: 28rpx;
+  --font-lg: 32rpx;
+  --font-xl: 36rpx;
+
+  /* 基础 */
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  font-size: 28rpx;
+  color: var(--color-body);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+/* ---------- 通用容器 ---------- */
+.container {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  padding: var(--spacing-lg);
+  box-sizing: border-box;
+}
+
+/* ---------- 卡片 ---------- */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-highlight {
+  border-left: 8rpx solid var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary-bg) 0%, var(--color-white) 100%);
+}
+
+/* ---------- 标题 ---------- */
+.section-title {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-title);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.page-title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--color-title);
+}
+
+/* ---------- 按钮 ---------- */
+.btn {
+  border: none;
+  border-radius: var(--radius-round);
+  padding: 24rpx 48rpx;
+  font-size: var(--font-md);
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.96);
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: var(--color-white);
+  box-shadow: 0 4rpx 16rpx rgba(255, 107, 107, 0.3);
+}
+
+.btn-outline {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border: 2rpx solid var(--color-primary);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #4CAF50, #66BB6A);
+  color: var(--color-white);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-sm {
+  padding: 16rpx 32rpx;
+  font-size: var(--font-sm);
+}
+
+/* ---------- 标签/徽章 ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6rpx;
+  padding: 8rpx 20rpx;
+  border-radius: var(--radius-round);
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+
+.badge-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.badge-success {
+  background: var(--color-success);
+  color: var(--color-white);
+}
+
+.badge-warning {
+  background: var(--color-warning);
+  color: var(--color-white);
+}
+
+.badge-info {
+  background: var(--color-info);
+  color: var(--color-white);
+}
+
+/* ---------- 空状态 ---------- */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx var(--spacing-lg);
+}
+
+.empty-icon {
+  font-size: 96rpx;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.6;
+}
+
+.empty-title {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-title);
+  margin-bottom: var(--spacing-sm);
+}
+
+.empty-desc {
+  font-size: var(--font-sm);
+  color: var(--color-hint);
+}
+
+/* ---------- 加载状态 ---------- */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 0;
+}
+
+.loading-spinner {
+  width: 64rpx;
+  height: 64rpx;
+  border: 4rpx solid var(--color-divider);
+  border-top-color: var(--color-primary);
+  border-radius: var(--radius-circle);
+  animation: spin 0.8s linear infinite;
+  margin-bottom: var(--spacing-md);
+}
+
+.loading-text {
+  font-size: var(--font-sm);
+  color: var(--color-hint);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- 分隔线 ---------- */
+.divider {
+  height: 1rpx;
+  background: var(--color-divider);
+  margin: var(--spacing-sm) 0;
+}
+
+/* ---------- 间距工具 ---------- */
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* ---------- 文字工具 ---------- */
+.text-center { text-align: center; }
+.text-primary { color: var(--color-primary); }
+.text-success { color: var(--color-success); }
+.text-hint { color: var(--color-hint); }
+.text-bold { font-weight: 700; }
+.text-sm { font-size: var(--font-sm); }
+.text-md { font-size: var(--font-md); }
+.text-lg { font-size: var(--font-lg); }
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Flex 工具 ---------- */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-1 { flex: 1; }
+.flex-center { justify-content: center; align-items: center; }
+.flex-between { justify-content: space-between; }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+
+/* ---------- 适老化字体缩放 ---------- */
+/* 小字号模式：基准字号缩小为 0.9 倍 */
+.page-small {
+  --font-xs: 20rpx;
+  --font-sm: 22rpx;
+  --font-md: 25rpx;
+  --font-lg: 29rpx;
+  --font-xl: 32rpx;
+  font-size: 25rpx;
+}
+
+/* 中字号模式（默认，不做覆盖） */
+.page-medium {
+  /* 继承 page 的默认字号 */
+}
+
+/* 大字号模式：基准字号放大为 1.15 倍 */
+.page-large {
+  --font-xs: 25rpx;
+  --font-sm: 28rpx;
+  --font-md: 32rpx;
+  --font-lg: 37rpx;
+  --font-xl: 41rpx;
+  font-size: 32rpx;
+}

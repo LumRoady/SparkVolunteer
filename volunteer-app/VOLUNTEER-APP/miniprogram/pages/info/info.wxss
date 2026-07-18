@@ -1,0 +1,281 @@
+/* 页面容器 */
+.container {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding-bottom: 140rpx;
+}
+
+/* ========== 分类选项卡 — 同首页排行榜风格 ========== */
+.rank-tabs {
+  display: flex;
+  background: #fff;
+  border-radius: 16rpx;
+  margin: 20rpx 20rpx 0;
+  padding: 10rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
+}
+
+.rank-tab {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  color: #636e72;
+  transition: all 0.2s;
+}
+
+.rank-tab.active {
+  background: linear-gradient(135deg, #ff6b6b, #e55a5a);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ========== 通知列表 ========== */
+.notify-list {
+  padding: 20rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+/* 通知卡片 */
+.notify-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 28rpx 24rpx;
+  border-radius: 16rpx;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.06);
+}
+
+/* 未读状态：粉白底 + 左边红色竖线 */
+.notify-card.unread {
+  background: #FFF5F5;
+  border-left: 6rpx solid #ff6b6b;
+  padding-left: 18rpx;
+}
+
+/* 未读红点 — 右上角 */
+.unread-dot {
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background: #ff6b6b;
+}
+
+/* 左侧圆形图标 */
+.card-icon-wrap {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.card-icon {
+  font-size: 36rpx;
+}
+
+/* 右侧内容 */
+.card-body {
+  flex: 1;
+  overflow: hidden;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.card-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+.card-red-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #ff6b6b;
+  flex-shrink: 0;
+}
+
+.card-content {
+  font-size: 26rpx;
+  color: #636e72;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 8rpx;
+}
+
+.card-time {
+  font-size: 22rpx;
+  color: #b2bec3;
+  display: block;
+  margin-top: 6rpx;
+}
+
+/* ========== 空状态 ========== */
+.empty-state {
+  text-align: center;
+  padding: 120rpx 0;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #b2bec3;
+}
+
+/* ========== 底部操作栏 ========== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32rpx;
+  padding: 20rpx 32rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  box-shadow: 0 -2rpx 12rpx rgba(0,0,0,0.06);
+  z-index: 10;
+}
+
+.bottom-btn {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 48rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.bottom-btn.secondary {
+  background: #f5f6fa;
+  color: #636e72;
+  border: 2rpx solid #dfe6e9;
+}
+
+.bottom-btn.primary {
+  background: linear-gradient(135deg, #ff6b6b, #e55a5a);
+  color: #fff;
+  box-shadow: 0 8rpx 20rpx rgba(255,107,107,0.3);
+}
+
+/* ========== 批量操作模式 ========== */
+.notify-card.batch-mode {
+  padding-left: 24rpx;
+}
+
+.notify-card.selected {
+  background: #f0f7ff;
+  border-left: 6rpx solid #4A90D9;
+}
+
+.batch-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+  flex-shrink: 0;
+}
+
+.checkbox {
+  width: 40rpx;
+  height: 40rpx;
+  border: 4rpx solid #dfe6e9;
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+}
+
+.checkbox.checked {
+  background: #4A90D9;
+  border-color: #4A90D9;
+}
+
+.checkbox.checked::after {
+  content: '';
+  position: absolute;
+  left: 12rpx;
+  top: 6rpx;
+  width: 10rpx;
+  height: 18rpx;
+  border: solid #fff;
+  border-width: 0 4rpx 4rpx 0;
+  transform: rotate(45deg);
+}
+
+/* 批量操作栏 */
+.batch-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 32rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  box-shadow: 0 -4rpx 20rpx rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.batch-left {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  font-size: 28rpx;
+  color: #636e72;
+}
+
+.batch-right {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.batch-btn {
+  padding: 16rpx 24rpx;
+  border-radius: 32rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.batch-btn.cancel {
+  background: #f5f6fa;
+  color: #636e72;
+}
+
+.batch-btn.mark-read {
+  background: #e8f4f8;
+  color: #4A90D9;
+}
+
+.batch-btn.delete {
+  background: linear-gradient(135deg, #ff6b6b, #e55a5a);
+  color: #fff;
+}

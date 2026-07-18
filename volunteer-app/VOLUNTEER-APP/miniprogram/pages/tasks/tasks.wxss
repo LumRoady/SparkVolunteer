@@ -1,0 +1,264 @@
+/* ========== 页面容器 ========== */
+.container {
+  min-height: 100vh;
+  background-color: #f5f6fa;
+}
+
+/* ========== 筛选Tab ========== */
+.filter-section {
+  display: flex;
+  background: #ffffff;
+  padding: 20rpx 24rpx;
+  gap: 12rpx;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.04);
+}
+
+.filter-tab {
+  flex: 1;
+  text-align: center;
+  padding: 16rpx 0;
+  border-radius: 12rpx;
+  background: #f5f6fa;
+}
+
+.filter-tab.active {
+  background: #ff6b6b;
+}
+
+.filter-text {
+  font-size: 28rpx;
+  color: #636e72;
+  font-weight: 500;
+}
+
+.filter-tab.active .filter-text {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ========== 任务列表 ========== */
+.task-list {
+  padding: 16rpx 24rpx;
+}
+
+.loading-state,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 0;
+}
+
+.loading-text {
+  font-size: 32rpx;
+  color: #b2bec3;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  margin-bottom: 16rpx;
+}
+
+.empty-text {
+  font-size: 32rpx;
+  color: #b2bec3;
+}
+
+/* ========== 任务卡片 ========== */
+.task-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 12rpx;
+  margin-bottom: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
+}
+
+.card-left-bar {
+  width: 8rpx;
+  flex-shrink: 0;
+}
+
+.card-left-bar.emergency,
+.card-left-bar.sos {
+  background: #ff4757;
+}
+
+.card-left-bar.life_service {
+  background: #ffa502;
+}
+
+.card-left-bar.consultation {
+  background: #2ed573;
+}
+
+.card-left-bar.normal {
+  background: #3742fa;
+}
+
+.card-body {
+  flex: 1;
+  padding: 24rpx;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.type-badge {
+  padding: 4rpx 16rpx;
+  border-radius: 8rpx;
+}
+
+.type-badge.emergency,
+.type-badge.sos {
+  background: rgba(255,71,87,0.12);
+}
+
+.type-badge.emergency text,
+.type-badge.sos text {
+  color: #ff4757;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.type-badge.life_service {
+  background: rgba(255,165,2,0.12);
+}
+
+.type-badge.life_service text {
+  color: #ffa502;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.type-badge.consultation {
+  background: rgba(46,213,115,0.12);
+}
+
+.type-badge.consultation text {
+  color: #2ed573;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.type-badge.normal {
+  background: rgba(55,66,250,0.1);
+}
+
+.type-badge.normal text {
+  color: #3742fa;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4rpx 16rpx;
+  border-radius: 8rpx;
+}
+
+.status-badge.PENDING {
+  background: rgba(255,165,2,0.12);
+}
+
+.status-badge.PENDING text {
+  color: #ffa502;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.status-badge.ACCEPTED {
+  background: rgba(55,66,250,0.1);
+}
+
+.status-badge.ACCEPTED text {
+  color: #3742fa;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.status-badge.COMPLETED {
+  background: rgba(46,213,115,0.12);
+}
+
+.status-badge.COMPLETED text {
+  color: #2ed573;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.card-title {
+  font-size: 32rpx;
+  color: #2d3436;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-meta {
+  display: flex;
+  gap: 24rpx;
+  margin-bottom: 16rpx;
+}
+
+.meta-time,
+.meta-location {
+  font-size: 24rpx;
+  color: #b2bec3;
+}
+
+/* ========== 操作按钮 ========== */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16rpx;
+}
+
+.action-btn {
+  height: 64rpx;
+  line-height: 64rpx;
+  padding: 0 32rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  border: none;
+}
+
+.action-btn::after {
+  border: none;
+}
+
+.accept-btn {
+  background: #3742fa;
+  color: #ffffff;
+}
+
+.complete-btn {
+  background: #2ed573;
+  color: #ffffff;
+}
+
+/* ========== 加载更多 ========== */
+.load-more {
+  text-align: center;
+  padding: 24rpx 0 48rpx;
+}
+
+.load-more text {
+  font-size: 26rpx;
+  color: #b2bec3;
+}
+
+.no-more {
+  color: #dfe6e9;
+}

@@ -1,0 +1,26 @@
+<view class="page">
+
+  <!-- 顶部文案 -->
+  <view class="header">
+    <text class="title">你的每一份付出都闪闪发光</text>
+    <text class="subtitle">继续加油，更多荣誉等你点亮</text>
+  </view>
+
+  <!-- 中心头像 -->
+  <view class="avatar-box">
+    <view class="avatar-wrap {{zoomed ? 'zoomed' : ''}}" bindtap="onAvatarTap">
+      <image class="avatar-img" src="{{avatar}}" mode="aspectFill" />
+    </view>
+    <text class="avatar-tip">轻触头像查看荣誉</text>
+  </view>
+
+  <!-- 勋章 2×3 网格 -->
+  <view class="badge-grid">
+    <view class="badge-card" wx:for="{{badges}}" wx:key="index">
+      <text class="badge-icon">{{item.icon}}</text>
+      <text class="badge-name">{{item.title}}</text>
+      <text class="badge-desc">点击查看详情</text>
+    </view>
+  </view>
+
+</view>

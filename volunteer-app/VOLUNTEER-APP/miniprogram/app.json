@@ -1,0 +1,71 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/forgot-password/forgot-password",
+    "pages/dashboard/dashboard",
+    "pages/tasks/tasks",
+    "pages/task-detail/task-detail",
+    "pages/emergency-detail/emergency-detail",
+    "pages/life-service-detail/life-service-detail",
+    "pages/consultation-detail/consultation-detail",
+    "pages/emergency-publish/emergency-publish",
+    "pages/life-service-publish/life-service-publish",
+    "pages/consultation-publish/consultation-publish",
+    "pages/publish/publish",
+    "pages/publish-task/publish-task",
+    "pages/remote-help/remote-help",
+    "pages/settings/settings",
+    "pages/checkin/checkin",
+    "pages/challenge-detail/challenge-detail",
+    "pages/info/info",
+    "pages/notification-detail/notification-detail",
+    "pages/message-detail/message-detail",
+    "pages/my-tasks/my-tasks",
+    "pages/my-honors/my-honors",
+    "pages/profile/profile",
+    "pages/change-password/change-password",
+    "pages/bind-phone/bind-phone",
+    "pages/language/language",
+    "pages/user-agreement/user-agreement",
+    "pages/privacy-policy/privacy-policy",
+    "pages/contact-us/contact-us",
+    "pages/about/about",
+    "pages/points-achievements/points-achievements"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "星火众擎",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#ff6b6b",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/checkin/checkin",
+        "text": "服务挑战"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "text": "通知"
+      },
+      {
+        "pagePath": "pages/dashboard/dashboard",
+        "text": "我的"
+      }
+    ]
+  },
+  "requiredPrivateInfos": [
+    "chooseLocation"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

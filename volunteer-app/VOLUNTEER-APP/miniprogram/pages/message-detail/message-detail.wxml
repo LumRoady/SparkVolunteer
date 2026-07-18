@@ -1,0 +1,55 @@
+<view class="container">
+  <scroll-view class="message-list" scroll-y>
+    <view class="message-item {{item.type === 'sent' ? 'sent' : 'received'}}" wx:for="{{messageHistory}}" wx:key="index">
+      <view wx:if="{{item.type === 'received'}}" class="message-avatar">
+        <text class="avatar">{{item.senderAvatar}}</text>
+      </view>
+      <view class="message-content {{item.type === 'sent' ? 'sent' : 'received'}}">
+        <text class="message-text">{{item.content}}</text>
+        <text class="message-time">{{item.time}}</text>
+      </view>
+      <view wx:if="{{item.type === 'sent'}}" class="message-avatar">
+        <text class="avatar">我</text>
+      </view>
+    </view>
+  </scroll-view>
+  
+  <view class="message-input-section">
+    <view class="input-tools">
+      <button class="tool-btn" bindtap="toggleVoiceMode">
+        <text>{{isVoiceMode ? '📝' : '🎤'}}</text>
+      </button>
+    </view>
+    <input 
+      wx:if="{{!isVoiceMode}}" 
+      class="message-input" 
+      placeholder="输入消息..." 
+      value="{{inputMessage}}" 
+      bindinput="handleInput"
+    />
+    <view wx:else class="voice-input">
+      <button class="voice-btn" bindtouchstart="startRecording" bindtouchend="stopRecording">
+        <text>按住说话</text>
+      </button>
+    </view>
+    <button class="send-btn" bindtap="sendMessage" wx:if="{{!isVoiceMode && inputMessage}}">
+      <text>发送</text>
+    </button>
+  </view>
+  
+  <!-- 联系方式弹窗 -->
+  <view class="contact-modal" wx:if="{{showContactModal}}">
+    <view class="modal-content">
+      <text class="modal-title">老人联系方式</text>
+      <text class="modal-contact">{{contact}}</text>
+      <view class="modal-buttons">
+        <button class="modal-btn call-btn" bindtap="makePhoneCall">
+          <text>拨打电话</text>
+        </button>
+        <button class="modal-btn close-btn" bindtap="closeContactModal">
+          <text>关闭</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

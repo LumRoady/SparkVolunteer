@@ -1,0 +1,362 @@
+/* ========== 页面容器 ========== */
+.container {
+  min-height: 100vh;
+  background-color: #f5f6fa;
+  padding: 24rpx;
+  padding-bottom: 160rpx;
+}
+
+/* ========== 加载/空状态 ========== */
+.loading-wrap,
+.empty-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 200rpx 0;
+}
+
+.loading-text,
+.empty-text {
+  font-size: 32rpx;
+  color: #b2bec3;
+}
+
+/* ========== 头部卡片 ========== */
+.header-card {
+  background: #ffffff;
+  border-radius: 12rpx;
+  padding: 32rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.type-tag {
+  padding: 6rpx 20rpx;
+  border-radius: 8rpx;
+}
+
+.type-tag.emergency,
+.type-tag.sos {
+  background: rgba(255,71,87,0.12);
+}
+
+.type-tag.emergency text,
+.type-tag.sos text {
+  color: #ff4757;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.type-tag.life_service {
+  background: rgba(255,165,2,0.12);
+}
+
+.type-tag.life_service text {
+  color: #ffa502;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.type-tag.consultation {
+  background: rgba(46,213,115,0.12);
+}
+
+.type-tag.consultation text {
+  color: #2ed573;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.status-tag {
+  padding: 6rpx 20rpx;
+  border-radius: 8rpx;
+}
+
+.status-tag.PENDING {
+  background: rgba(255,165,2,0.12);
+}
+
+.status-tag.PENDING text {
+  color: #ffa502;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.status-tag.ACCEPTED {
+  background: rgba(55,66,250,0.1);
+}
+
+.status-tag.ACCEPTED text {
+  color: #3742fa;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.status-tag.COMPLETED {
+  background: rgba(46,213,115,0.12);
+}
+
+.status-tag.COMPLETED text {
+  color: #2ed573;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.task-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #2d3436;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+.task-desc {
+  font-size: 32rpx;
+  color: #636e72;
+  line-height: 1.8;
+}
+
+/* ========== 信息卡片 ========== */
+.info-card {
+  background: #ffffff;
+  border-radius: 12rpx;
+  padding: 32rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #f5f6fa;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 28rpx;
+  color: #636e72;
+}
+
+.info-value {
+  font-size: 28rpx;
+  color: #2d3436;
+  font-weight: 500;
+  text-align: right;
+  max-width: 400rpx;
+}
+
+.info-value.urgency {
+  color: #ff4757;
+  font-weight: 700;
+}
+
+/* ========== 发布者信息 ========== */
+.publisher-card {
+  background: #ffffff;
+  border-radius: 12rpx;
+  padding: 32rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
+}
+
+.card-section-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #2d3436;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.publisher-row {
+  display: flex;
+  align-items: center;
+}
+
+.publisher-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #eee;
+}
+
+.publisher-info {
+  margin-left: 20rpx;
+}
+
+.publisher-name {
+  font-size: 32rpx;
+  color: #2d3436;
+  font-weight: 600;
+  display: block;
+}
+
+.publisher-community {
+  font-size: 26rpx;
+  color: #b2bec3;
+  margin-top: 6rpx;
+  display: block;
+}
+
+/* ========== 底部操作栏 ========== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  padding: 20rpx 24rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  display: flex;
+  gap: 16rpx;
+  box-shadow: 0 -2rpx 12rpx rgba(0,0,0,0.06);
+  z-index: 100;
+}
+
+.bar-btn {
+  flex: 1;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  border: none;
+  text-align: center;
+}
+
+.bar-btn::after {
+  border: none;
+}
+
+.accept-btn {
+  background: #3742fa;
+  color: #ffffff;
+}
+
+.contact-btn {
+  background: #ffa502;
+  color: #ffffff;
+}
+
+.complete-btn {
+  background: #2ed573;
+  color: #ffffff;
+}
+
+.bar-done {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+}
+
+.done-icon {
+  font-size: 36rpx;
+}
+
+.done-text {
+  font-size: 32rpx;
+  color: #2ed573;
+  font-weight: 600;
+}
+
+/* ========== 弹窗 ========== */
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+}
+
+.modal-popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 600rpx;
+  background: #ffffff;
+  border-radius: 12rpx;
+  padding: 48rpx 40rpx;
+  z-index: 201;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #2d3436;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.modal-desc {
+  font-size: 28rpx;
+  color: #b2bec3;
+  display: block;
+  margin-bottom: 32rpx;
+}
+
+.modal-phone-row {
+  background: #f5f6fa;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  margin-bottom: 32rpx;
+}
+
+.modal-label {
+  font-size: 26rpx;
+  color: #636e72;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.modal-phone {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #3742fa;
+  letter-spacing: 4rpx;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 16rpx;
+}
+
+.modal-btn {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 12rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  border: none;
+}
+
+.modal-btn::after {
+  border: none;
+}
+
+.call-btn {
+  background: #3742fa;
+  color: #ffffff;
+}
+
+.close-btn {
+  background: #f5f6fa;
+  color: #636e72;
+}

@@ -1,0 +1,50 @@
+<view class="consultation-container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+  
+  <!-- 内容区域 -->
+  <view wx:else>
+    <!-- 背景装饰 -->
+    <view class="corner top-left"></view>
+    <view class="corner top-right"></view>
+    <view class="corner bottom-left"></view>
+    <view class="corner bottom-right"></view>
+    
+    <!-- 顶部信息 -->
+    <view class="top-info">
+      <text class="distance-info">距您 1.8公里，预计8分钟到达</text>
+      <text class="weather-info">天气良好，适合出行</text>
+    </view>
+    
+    <!-- 中间核心区域 -->
+    <view class="core-area">
+      <!-- 咨询图标 - 居中显示，带发光效果 -->
+      <view class="consult-icon-container">
+        <view class="consult-icon glow-animation">
+          <text class="consult-icon-emoji">💬</text>
+        </view>
+      </view>
+      
+      <!-- 日常咨询标题 - 绿色背景box -->
+      <view class="consult-title-box">
+        <text class="consult-title">日常咨询</text>
+      </view>
+    </view>
+    
+    <!-- 底部悬浮操作栏 -->
+    <view class="bottom-actions">
+      <button class="action-btn nav-btn" bindtap="navigateTo">
+        <text class="btn-text">导航前往</text>
+      </button>
+      <button class="action-btn arrive-btn {{hasArrived ? 'completed-btn' : ''}}" bindtap="toggleArrive">
+        <text class="btn-text">{{hasArrived ? '咨询完成' : '我已到达'}}</text>
+      </button>
+      <button class="action-btn contact-btn" bindtap="callElder">
+        <text class="btn-text">联系老人</text>
+      </button>
+    </view>
+  </view>
+</view>

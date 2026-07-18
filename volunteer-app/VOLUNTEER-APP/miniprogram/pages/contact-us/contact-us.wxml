@@ -1,0 +1,46 @@
+<view class="contact-container">
+  <view class="header">
+    <text class="title">联系我们</text>
+  </view>
+  
+  <view class="contact-content">
+    <view class="contact-info">
+      <view class="contact-item">
+        <text class="contact-icon">📧</text>
+        <view class="contact-details">
+          <text class="contact-label">邮箱</text>
+          <text class="contact-value" bindtap="copyEmail">contact@sparkvolunteer.com</text>
+        </view>
+      </view>
+      <view class="contact-item">
+        <text class="contact-icon">📱</text>
+        <view class="contact-details">
+          <text class="contact-label">电话</text>
+          <text class="contact-value" bindtap="makePhoneCall">400-123-4567</text>
+        </view>
+      </view>
+      <view class="contact-item">
+        <text class="contact-icon">💬</text>
+        <view class="contact-details">
+          <text class="contact-label">在线客服</text>
+          <text class="contact-value" bindtap="openOnlineService">点击进入</text>
+        </view>
+      </view>
+      <view class="contact-item">
+        <text class="contact-icon">📍</text>
+        <view class="contact-details">
+          <text class="contact-label">地址</text>
+          <text class="contact-value">北京市海淀区中关村大街1号</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="feedback-section">
+      <text class="section-title">意见反馈</text>
+      <textarea class="feedback-input" placeholder="请输入您的意见或建议" bindinput="onFeedbackChange" />
+      <button class="submit-btn" bindtap="submitFeedback">
+        <text>提交反馈</text>
+      </button>
+    </view>
+  </view>
+</view>

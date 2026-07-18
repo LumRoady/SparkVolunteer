@@ -1,0 +1,55 @@
+<view class="agreement-container">
+  <view class="agreement-content">
+    <view class="agreement-section">
+      <text class="section-title">1. 协议的接受</text>
+      <text class="section-content">欢迎使用星火众擎志愿者服务平台（以下简称"平台"）。本协议是您与平台之间关于使用平台服务的法律协议。通过注册、登录或使用平台服务，您确认已阅读、理解并同意接受本协议的全部内容。如果您不同意本协议的任何内容，请立即停止注册、登录或使用平台服务。</text>
+    </view>
+    
+    <view class="agreement-section">
+      <text class="section-title">2. 用户注册</text>
+      <text class="section-content">2.1 您必须是具有完全民事行为能力的自然人、法人或其他组织，才能注册成为平台用户并使用平台服务。
+
+2.2 您在注册时应提供真实、准确、完整的个人信息，并在信息发生变更时及时更新。
+
+2.3 您应妥善保管您的账号和密码，对使用您账号进行的所有操作负全部责任。</text>
+    </view>
+    
+    <view class="agreement-section">
+      <text class="section-title">3. 平台服务</text>
+      <text class="section-content">3.1 平台提供志愿者服务信息发布、任务参与、签到打卡、消息通知等功能。
+
+3.2 平台有权根据业务发展需要调整、增加或减少服务内容。
+
+3.3 平台致力于为用户提供安全、稳定、优质的服务，但不保证服务的绝对及时性、安全性、准确性。</text>
+    </view>
+    
+    <view class="agreement-section">
+      <text class="section-title">4. 用户行为规范</text>
+      <text class="section-content">4.1 用户应遵守法律法规，不得利用平台从事违法违规活动。
+
+4.2 用户应尊重其他用户的合法权益，不得发布虚假信息、恶意攻击他人。
+
+4.3 用户应遵守平台的各项规则和管理制度。</text>
+    </view>
+    
+    <view class="agreement-section">
+      <text class="section-title">5. 隐私保护</text>
+      <text class="section-content">平台重视用户隐私保护，将按照相关法律法规和隐私政策的规定处理用户个人信息。</text>
+    </view>
+    
+    <view class="agreement-section">
+      <text class="section-title">6. 协议的修改</text>
+      <text class="section-content">平台有权根据法律法规的变化和业务发展需要修改本协议。修改后的协议将在平台上公布，用户继续使用平台服务即视为接受修改后的协议。</text>
+    </view>
+    
+    <view class="agreement-section">
+      <text class="section-title">7. 免责声明</text>
+      <text class="section-content">平台不对因网络故障、系统故障、自然灾害等不可抗力因素导致的服务中断或数据丢失承担责任。</text>
+    </view>
+    
+    <view class="agreement-section">
+      <text class="section-title">8. 其他</text>
+      <text class="section-content">本协议的订立、执行、解释及争议的解决均适用中华人民共和国法律。如就本协议发生任何争议，双方应协商解决；协商不成的，任何一方均有权向有管辖权的人民法院提起诉讼。</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<view class="about-container">
+  <view class="about-content">
+    <view class="app-info">
+      <view class="app-logo">
+        <text class="logo-icon">⭐</text>
+      </view>
+      <text class="app-name">星火众擎</text>
+      <text class="app-version">版本 v1.0.0</text>
+    </view>
+    
+    <view class="about-section">
+      <text class="section-title">项目介绍</text>
+      <text class="section-content">星火众擎是一个致力于连接志愿者和需要帮助的人群的平台。我们希望通过技术手段，让志愿服务更加便捷、高效，让更多的人参与到公益事业中来。</text>
+    </view>
+    
+    <view class="about-section">
+      <text class="section-title">我们的使命</text>
+      <text class="section-content">让志愿服务触手可及，让爱心传递无处不在。</text>
+    </view>
+    
+    <view class="about-section">
+      <text class="section-title">我们的愿景</text>
+      <text class="section-content">成为最受欢迎的志愿服务平台，构建一个充满爱心的和谐社会。</text>
+    </view>
+    
+    <view class="about-section">
+      <text class="section-title">联系我们</text>
+      <text class="section-content">邮箱：3529125105@qq.com
+电话：18183318753
+地址：云南省昆明市安宁市云南理工职业学院</text>
+    </view>
+    
+    <view class="about-section">
+      <text class="section-title">团队介绍</text>
+      <text class="section-content">我们是一支由热爱公益事业的年轻人组成的团队，致力于通过技术创新推动志愿服务的发展。团队成员来自不同领域，拥有丰富的技术和公益经验，共同为构建更加美好的社会而努力。</text>
+    </view>
+    
+    <view class="about-section">
+      <text class="section-title">发展历程</text>
+      <text class="section-content">2024年1月：项目启动，开始平台开发
+2024年3月：完成核心功能开发
+2024年5月：平台正式上线
+2024年8月：用户突破10000人
+2024年12月：获得年度公益创新奖</text>
+    </view>
+    
+    <view class="about-section">
+      <text class="section-title">合作伙伴</text>
+      <text class="section-content">云南理工职业学院
+昆明市志愿者协会
+云南省慈善总会
+各社区服务中心</text>
+    </view>
+    
+    <view class="about-section">
+      <text class="section-title">加入我们</text>
+      <text class="section-content">如果您也热爱公益事业，希望为社会做出贡献，欢迎加入我们的团队或成为平台的志愿者。您可以通过联系我们的方式，了解更多加入信息。</text>
+    </view>
+  </view>
+</view>

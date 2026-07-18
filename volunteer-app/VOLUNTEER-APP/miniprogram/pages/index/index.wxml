@@ -1,0 +1,94 @@
+<view class="container">
+  <!-- 轮播图 -->
+  <view class="banner-section" wx:if="{{banners.length > 0}}">
+    <swiper class="banner-swiper" indicator-dots="{{true}}" indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#ff6b6b" autoplay="{{true}}" interval="3000" duration="500" circular="{{true}}">
+      <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image class="banner-img" src="{{item.src}}" mode="aspectFill" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- ========== 视角切换条 ========== -->
+  <view class="view-switch-bar">
+    <view class="switch-track">
+      <view class="switch-slider" style="left:{{viewMode==='volunteer'?'4rpx':'50%'}}"></view>
+      <view class="switch-option {{viewMode==='volunteer'?'active':''}}" bindtap="switchViewMode" data-mode="volunteer">
+        <text>志愿者视角</text>
+      </view>
+      <view class="switch-option {{viewMode==='elderly'?'active':''}}" bindtap="switchViewMode" data-mode="elderly">
+        <text>求助者视角</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ========== 志愿者视图 ========== -->
+  <block wx:if="{{viewMode === 'volunteer'}}">
+    <!-- 快捷入口 -->
+    <view class="action-section">
+      <view class="action-box box-solid" bindtap="goToTasks"><text class="box-title">查看任务</text></view>
+      <view class="action-box box-outline" bindtap="goToPublish"><text class="box-title outline-title">发布任务</text></view>
+    </view>
+
+    <!-- 排行榜 -->
+    <view class="rank-section">
+      <view class="rank-tabs">
+        <view class="rank-tab {{activeTab==='accept'?'active':''}}" bindtap="switchTab" data-tab="accept"><text>接单榜</text></view>
+        <view class="rank-tab {{activeTab==='rating'?'active':''}}" bindtap="switchTab" data-tab="rating"><text>好评榜</text></view>
+        <view class="rank-tab {{activeTab==='points'?'active':''}}" bindtap="switchTab" data-tab="points"><text>志愿累计榜</text></view>
+      </view>
+      <view class="rank-list">
+        <view class="rank-item" wx:for="{{showAll?rankList:rankList.slice(0,3)}}" wx:key="userId">
+          <view class="rank-num"><text wx:if="{{index===0}}">🥇</text><text wx:elif="{{index===1}}">🥈</text><text wx:elif="{{index===2}}">🥉</text><text wx:else>{{index+1}}</text></view>
+          <view class="rank-info">
+            <text class="rank-name">{{item.nickname||'志愿者'}}</text>
+            <text class="rank-community" wx:if="{{item.community}}">{{item.community}}</text>
+          </view>
+          <view class="rank-score">
+            <text class="score-num">{{activeTab==='accept'?item.completedTasks:item.points}}</text>
+            <text class="score-label">{{activeTab==='accept'?'单':'分'}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="rank-expand" wx:if="{{rankList.length>3}}" bindtap="toggleShowAll"><text>{{showAll?'收起':'展开更多'}}</text></view>
+    </view>
+  </block>
+
+  <!-- ========== 求助者视图 ========== -->
+  <block wx:if="{{viewMode === 'elderly'}}">
+    <!-- 三色一键发布 -->
+    <view class="quick-section">
+      <view class="quick-card sos" bindtap="quickPublish" data-type="emergency">
+        <text class="quick-label">紧急求助</text>
+      </view>
+      <view class="quick-card life" bindtap="quickPublish" data-type="life_service">
+        <text class="quick-label">生活服务</text>
+      </view>
+      <view class="quick-card consult" bindtap="quickPublish" data-type="consultation">
+        <text class="quick-label">日常咨询</text>
+      </view>
+    </view>
+
+    <!-- 我的求助 -->
+    <view class="mytask-section">
+      <text class="section-title">我的求助</text>
+      <view class="mytask-list">
+        <view class="mytask-item" wx:for="{{myTasks}}" wx:key="id" bindtap="goToMyTaskDetail" data-id="{{item.id}}">
+          <view class="mt-left">
+            <text class="mt-type" style="background:{{item.type==='sos'||item.type==='emergency'?'#ff6b6b':item.type==='life_service'?'#ffa502':'#2ed573'}}">{{item.typeText}}</text>
+          </view>
+          <view class="mt-body">
+            <text class="mt-title">{{item.title}}</text>
+            <text class="mt-time">{{item.createTime}}</text>
+          </view>
+          <text class="mt-status">{{item.statusText}}</text>
+        </view>
+        <view class="mytask-empty" wx:if="{{myTasks.length===0}}">
+          <text>暂无求助记录，点击上方卡片发起</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 底部文案 -->
+  <view class="footer-text"><text>关爱，从你我开始</text></view>
+</view>

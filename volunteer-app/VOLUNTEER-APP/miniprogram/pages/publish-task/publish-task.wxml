@@ -1,0 +1,43 @@
+<view class="container">
+
+  <!-- 表单卡片 -->
+  <view class="card">
+    <view class="field">
+      <text class="field-label">需求标题</text>
+      <input class="field-input" placeholder="简单说明需要什么帮助" value="{{title}}" bindinput="onInput" data-field="title" />
+    </view>
+    <view class="field">
+      <text class="field-label">详细描述</text>
+      <textarea class="field-area" placeholder="描述具体情况，方便志愿者了解（选填）" value="{{description}}" bindinput="onInput" data-field="description" maxlength="300" auto-height />
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="field">
+      <text class="field-label">服务地址</text>
+      <input class="field-input" placeholder="您的地址" value="{{location}}" bindinput="onInput" data-field="location" />
+    </view>
+    <view class="field" style="border:none">
+      <text class="field-label">联系电话</text>
+      <input class="field-input" type="number" placeholder="方便志愿者联系您" value="{{contact}}" bindinput="onInput" data-field="contact" maxlength="11" />
+    </view>
+  </view>
+
+  <view class="card">
+    <picker mode="selector" range="{{urgencyOptions}}" bindchange="onUrgencyChange" value="{{urgencyIndex}}">
+      <view class="field-row">
+        <text class="field-label" style="margin-bottom:0">紧急程度</text>
+        <text class="field-value">{{urgencyOptions[urgencyIndex]}} ›</text>
+      </view>
+    </picker>
+    <view class="field-row" style="border:none;padding-bottom:0">
+      <text class="field-label" style="margin-bottom:0">需要志愿者上门</text>
+      <switch checked="{{needVisit}}" bindchange="onSwitchChange" color="{{theme.color}}" />
+    </view>
+  </view>
+
+  <!-- 发布按钮 -->
+  <button class="btn btn-primary btn-block" style="margin-top:48rpx" bindtap="submitTask" disabled="{{submitting || !canSubmit}}">
+    {{submitting ? '发布中...' : '立即发布'}}
+  </button>
+</view>

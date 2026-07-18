@@ -1,0 +1,60 @@
+<view class="emergency-container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+  
+  <!-- 内容区域 -->
+  <view wx:else>
+    <!-- 背景装饰 -->
+    <view class="corner top-left"></view>
+    <view class="corner top-right"></view>
+    <view class="corner bottom-left"></view>
+    <view class="corner bottom-right"></view>
+    
+    <!-- 顶部信息 -->
+    <view class="top-info">
+      <text class="distance-info">距您 1.2公里，预计5分钟到达</text>
+      <text class="weather-info">雨天路滑，请注意安全</text>
+    </view>
+    
+    <!-- 中间核心区域 -->
+    <view class="core-area">
+      <!-- SOS图标 - 居中显示，带波纹效果 -->
+      <view class="sos-icon-container">
+        <view class="sos-icon pulse-animation">
+          <text class="sos-text">SOS</text>
+        </view>
+        <!-- 波纹效果 -->
+        <view class="ripple ripple-1"></view>
+        <view class="ripple ripple-2"></view>
+        <view class="ripple ripple-3"></view>
+      </view>
+      
+      <!-- 紧急求助标题 - 珊瑚红背景box -->
+      <view class="emergency-title-box">
+        <text class="emergency-title">紧急求助中</text>
+      </view>
+      
+      <!-- 等待计时 - 珊瑚红背景box -->
+      <view class="countdown-box">
+        <text class="countdown-label">已等待</text>
+        <text class="countdown-time">{{countdown}}</text>
+      </view>
+    </view>
+    
+    <!-- 底部悬浮操作栏 -->
+    <view class="bottom-actions">
+      <button class="action-btn nav-btn" bindtap="navigateTo">
+        <text class="btn-text">导航前往</text>
+      </button>
+      <button class="action-btn contact-btn" bindtap="callFamily">
+        <text class="btn-text">联系电话</text>
+      </button>
+      <button class="action-btn call120-btn" bindtap="call120">
+        <text class="btn-text">呼叫120</text>
+      </button>
+    </view>
+  </view>
+</view>

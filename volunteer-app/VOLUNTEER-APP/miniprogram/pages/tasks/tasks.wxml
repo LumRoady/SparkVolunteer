@@ -1,0 +1,65 @@
+<view class="container">
+  <!-- 顶部筛选Tab -->
+  <view class="filter-section">
+    <view class="filter-tab {{activeFilter === 'all' ? 'active' : ''}}" bindtap="switchFilter" data-filter="all">
+      <text class="filter-text">全部</text>
+    </view>
+    <view class="filter-tab {{activeFilter === 'emergency' ? 'active' : ''}}" bindtap="switchFilter" data-filter="emergency">
+      <text class="filter-text">紧急</text>
+    </view>
+    <view class="filter-tab {{activeFilter === 'life_service' ? 'active' : ''}}" bindtap="switchFilter" data-filter="life_service">
+      <text class="filter-text">生活</text>
+    </view>
+    <view class="filter-tab {{activeFilter === 'consultation' ? 'active' : ''}}" bindtap="switchFilter" data-filter="consultation">
+      <text class="filter-text">咨询</text>
+    </view>
+  </view>
+
+  <!-- 任务列表 -->
+  <view class="task-list">
+    <view class="loading-state" wx:if="{{loading && tasks.length === 0}}">
+      <text class="loading-text">加载中...</text>
+    </view>
+
+    <view class="empty-state" wx:if="{{!loading && filteredTasks.length === 0}}">
+      <text class="empty-icon">📋</text>
+      <text class="empty-text">暂无任务</text>
+    </view>
+
+    <view class="task-card {{item.type}}" wx:for="{{filteredTasks}}" wx:key="id" bindtap="viewDetail" data-id="{{item.id}}">
+      <!-- 类型色标 -->
+      <view class="card-left-bar {{item.type}}"></view>
+      <view class="card-body">
+        <view class="card-header">
+          <view class="type-badge {{item.type}}">
+            <text>{{item.typeText}}</text>
+          </view>
+          <view class="status-badge {{item.status}}">
+            <text>{{item.statusText}}</text>
+          </view>
+        </view>
+        <text class="card-title">{{item.title}}</text>
+        <view class="card-meta">
+          <text class="meta-time">{{item.timeAgo}}</text>
+          <text class="meta-location">{{item.location || '未知位置'}}</text>
+        </view>
+        <view class="card-actions" wx:if="{{item.status !== 'COMPLETED'}}">
+          <button class="action-btn accept-btn" wx:if="{{item.status === 'PENDING'}}" catchtap="acceptTask" data-id="{{item.id}}">
+            接单
+          </button>
+          <button class="action-btn complete-btn" wx:if="{{item.status === 'ACCEPTED'}}" catchtap="completeTask" data-id="{{item.id}}">
+            完成
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 加载更多提示 -->
+    <view class="load-more" wx:if="{{hasMore && filteredTasks.length > 0}}">
+      <text>{{loadingMore ? '加载中...' : '上拉加载更多'}}</text>
+    </view>
+    <view class="load-more" wx:if="{{!hasMore && filteredTasks.length > 0}}">
+      <text class="no-more">— 没有更多了 —</text>
+    </view>
+  </view>
+</view>

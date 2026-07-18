@@ -1,0 +1,62 @@
+<view class="container {{fontSizeClass}}">
+
+  <view class="task-tabs">
+    <view class="task-tab {{activeTab === 'participated' ? 'active' : ''}}" bindtap="switchTab" data-tab="participated">
+      <text>已参与</text>
+    </view>
+    <view class="task-tab {{activeTab === 'published' ? 'active' : ''}}" bindtap="switchTab" data-tab="published">
+      <text>已发布</text>
+    </view>
+  </view>
+  
+  <!-- 已参与任务 -->
+  <view class="task-list" wx:if="{{activeTab === 'participated'}}">
+    <view class="task-card" wx:for="{{participatedTasks}}" wx:key="index">
+      <view class="task-header">
+        <text class="task-title">{{item.title}}</text>
+        <text class="task-status {{item.status}}">{{item.statusText}}</text>
+      </view>
+      <text class="task-desc">{{item.description}}</text>
+      <view class="task-info">
+        <text class="task-location">{{item.location}}</text>
+        <text class="task-time">{{item.time}}</text>
+      </view>
+      <view class="task-actions">
+        <button class="action-btn" bindtap="viewTaskDetail" data-id="{{item.id}}">
+          <text>查看详情</text>
+        </button>
+      </view>
+    </view>
+    
+    <view class="empty-state" wx:if="{{participatedTasks.length === 0}}">
+      <text class="empty-text">暂无参与的任务</text>
+    </view>
+  </view>
+  
+  <!-- 已发布任务 -->
+  <view class="task-list" wx:else>
+    <view class="task-card" wx:for="{{publishedTasks}}" wx:key="index">
+      <view class="task-header">
+        <text class="task-title">{{item.title}}</text>
+        <text class="task-status {{item.status}}">{{item.statusText}}</text>
+      </view>
+      <text class="task-desc">{{item.description}}</text>
+      <view class="task-info">
+        <text class="task-location">{{item.location}}</text>
+        <text class="task-time">{{item.time}}</text>
+      </view>
+      <view class="task-actions">
+        <button class="action-btn" bindtap="viewTaskDetail" data-id="{{item.id}}">
+          <text>查看详情</text>
+        </button>
+        <button class="action-btn secondary" bindtap="cancelTask" data-id="{{item.id}}" wx:if="{{item.status === 'pending'}}">
+          <text>取消任务</text>
+        </button>
+      </view>
+    </view>
+    
+    <view class="empty-state" wx:if="{{publishedTasks.length === 0}}">
+      <text class="empty-text">暂无发布的任务</text>
+    </view>
+  </view>
+</view>

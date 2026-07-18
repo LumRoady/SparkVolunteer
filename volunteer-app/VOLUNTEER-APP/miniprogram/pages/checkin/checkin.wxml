@@ -1,0 +1,45 @@
+<view class="page-container">
+  <view class="header-card">
+    <view class="change-btn" bindtap="handleChangeTasks">更换任务</view>
+    <view class="header-info">
+      <view class="progress-text">已完成 {{completedCount}}/{{totalCount}} 个挑战</view>
+      <view class="points-text">当前积分: {{userPoints}}</view>
+    </view>
+  </view>
+
+  <view class="challenge-card">
+    <view class="challenge-item" wx:for="{{challenges}}" wx:key="id">
+      <view class="challenge-left">
+        <view class="challenge-title">{{item.title}}</view>
+        <view class="challenge-desc">{{item.description}}</view>
+        <view class="challenge-reward">奖励: {{item.reward}}积分</view>
+      </view>
+      <view class="challenge-right">
+        <view class="btn-outline" bindtap="handleViewDetail" data-index="{{index}}">查看详情</view>
+        <view class="btn-solid" bindtap="handleCancelChallenge" data-id="{{item.id}}">取消挑战</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-card">
+    <view class="form-label">需求类型</view>
+    <input class="type-input" placeholder="" value="{{feedbackType}}" bindinput="handleTypeInput" />
+    
+    <view class="form-label">需求描述</view>
+    <textarea class="desc-input" placeholder="" value="{{description}}" bindinput="handleDescInput"></textarea>
+    
+    <view class="submit-btn" bindtap="handleSubmitFeedback">提交反馈</view>
+    
+    <view class="history-section">
+      <view class="history-title">反馈历史</view>
+      <view class="history-list">
+        <view class="history-item" wx:for="{{feedbackHistory}}" wx:key="id">
+          <view class="history-tag">{{item.type}}</view>
+          <view class="history-desc">{{item.description}}</view>
+          <view class="history-date">{{item.date}}</view>
+          <view class="history-status {{item.status === '已处理' ? 'status-done' : 'status-processing'}}">{{item.status}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

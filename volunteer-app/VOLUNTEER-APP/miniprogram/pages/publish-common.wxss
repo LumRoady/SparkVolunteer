@@ -1,0 +1,201 @@
+/* 主题发布页面共享样式 */
+
+/* ====== 顶部主题区域 ====== */
+.theme-header {
+  text-align: center;
+  padding: 40rpx 0 24rpx;
+}
+.theme-icon-wrap {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20rpx;
+}
+.theme-icon {
+  font-size: 56rpx;
+}
+.theme-title {
+  font-size: 40rpx;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 8rpx;
+}
+.theme-hint {
+  font-size: 26rpx;
+  color: var(--color-hint);
+  display: block;
+}
+
+/* ====== 快捷场景标签 ====== */
+.quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  padding: 0 0 24rpx;
+}
+.tag {
+  padding: 12rpx 28rpx;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+  background: #fff;
+  color: var(--color-body);
+  border: 2rpx solid var(--color-border);
+  transition: all 0.2s;
+}
+.tag.active {
+  color: #fff;
+  border-color: transparent;
+}
+
+/* ====== 表单字段 ====== */
+.field {
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid var(--color-divider);
+}
+.field:first-child { padding-top: 0; }
+.field:last-child { border-bottom: none; padding-bottom: 0; }
+
+.field-label {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--color-title);
+  display: block;
+  margin-bottom: 14rpx;
+}
+.field-input {
+  width: 100%;
+  font-size: var(--font-lg);
+  color: var(--color-body);
+  height: 80rpx;
+}
+
+/* ====== 地址输入行（输入框 + 定位按钮）====== */
+.address-row {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+.address-row .field-input {
+  flex: 1;
+}
+.location-btn {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #4A90D9;
+  box-shadow: 0 6rpx 16rpx rgba(74, 144, 217, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.15s;
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+.location-btn:active {
+  transform: scale(0.88);
+}
+.location-btn.loading {
+  animation: pulse-loc 1s ease-in-out infinite;
+}
+@keyframes pulse-loc {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.9); opacity: 0.7; }
+}
+
+/* CSS 简笔画地图钉图标 */
+.pin-icon {
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50% 50% 50% 0;
+  background: #fff;
+  transform: rotate(-45deg);
+  position: relative;
+}
+.pin-icon::after {
+  content: '';
+  position: absolute;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #4A90D9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.field-area {
+  width: 100%;
+  min-height: 120rpx;
+  font-size: var(--font-lg);
+  color: var(--color-body);
+  line-height: 1.6;
+}
+.field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28rpx 0;
+  border-bottom: 1rpx solid var(--color-divider);
+}
+.field-value {
+  font-size: var(--font-md);
+  color: var(--color-hint);
+}
+
+/* ====== 提交按钮 ====== */
+.submit-btn {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 44rpx;
+  padding: 28rpx 0;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 48rpx;
+  letter-spacing: 2rpx;
+}
+.submit-btn:active {
+  transform: scale(0.96);
+  opacity: 0.85;
+}
+.submit-btn[disabled] {
+  opacity: 0.5;
+}
+
+/* ====== 红色主题（紧急求助）====== */
+.emergency-theme .theme-icon-wrap {
+  background: rgba(255, 59, 48, 0.12);
+}
+.emergency-theme .theme-title { color: #ff3b30; }
+.emergency-theme .tag.active { background: #ff3b30; }
+.emergency-btn {
+  background: linear-gradient(135deg, #ff3b30, #cc0000);
+  box-shadow: 0 8rpx 24rpx rgba(255, 59, 48, 0.35);
+}
+
+/* ====== 黄色主题（生活服务）====== */
+.life-theme .theme-icon-wrap {
+  background: rgba(255, 165, 2, 0.12);
+}
+.life-theme .theme-title { color: #ffa502; }
+.life-theme .tag.active { background: #ffa502; }
+.life-btn {
+  background: linear-gradient(135deg, #ffa502, #ffbe76);
+  box-shadow: 0 8rpx 24rpx rgba(255, 165, 2, 0.35);
+}
+
+/* ====== 绿色主题（日常咨询）====== */
+.consult-theme .theme-icon-wrap {
+  background: rgba(46, 213, 115, 0.12);
+}
+.consult-theme .theme-title { color: #2ed573; }
+.consult-theme .tag.active { background: #2ed573; }
+.consult-btn {
+  background: linear-gradient(135deg, #2ed573, #7bed9f);
+  box-shadow: 0 8rpx 24rpx rgba(46, 213, 115, 0.35);
+}

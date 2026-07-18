@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="notification-detail">
+    <view class="notification-icon">
+      <text class="icon">{{notification.icon}}</text>
+    </view>
+    
+    <text class="notification-title">{{notification.title}}</text>
+    
+    <text class="notification-time">{{notification.time}}</text>
+    
+    <text class="notification-content">{{notification.content}}</text>
+    
+    <view class="notification-actions">
+      <button class="action-btn" bindtap="markAsRead" wx:if="{{!notification.read}}">
+        <text>标记为已读</text>
+      </button>
+      <button class="action-btn secondary" bindtap="goToRelatedTask" wx:if="{{notification.relatedTask}}">
+        <text>查看相关任务</text>
+      </button>
+    </view>
+  </view>
+</view>

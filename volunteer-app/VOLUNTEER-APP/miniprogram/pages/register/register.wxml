@@ -1,0 +1,104 @@
+<view class="register-container">
+  <view class="register-wrapper">
+    <!-- 注册表单 -->
+    <view class="register-form-section">
+      <view class="register-header">
+        <view class="logo">
+          <text class="logo-text">欢迎使用星火众擎</text>
+        </view>
+      </view>
+      
+      <view class="register-form">
+        <view class="input-group">
+          
+          <view class="input-item">
+            <input 
+              value="{{registerForm.phone}}" 
+              bindinput="handleInput" 
+              data-field="phone"
+              class="uni-input" 
+              placeholder="请输入手机号" 
+              type="number"
+            />
+          </view>
+          
+          <view class="input-item">
+            <input 
+              value="{{registerForm.password}}" 
+              bindinput="handleInput" 
+              data-field="password"
+              class="uni-input" 
+              placeholder="请输入密码" 
+              password
+            />
+          </view>
+          
+          <view class="input-item">
+            <input 
+              value="{{registerForm.confirmPassword}}" 
+              bindinput="handleInput" 
+              data-field="confirmPassword"
+              class="uni-input" 
+              placeholder="请再次输入密码" 
+              password
+            />
+          </view>
+        </view>
+        
+        <view class="radio-group">
+          <text class="radio-label">选择您的身份：</text>
+          <view class="radio-options">
+            <view 
+              class="radio-option {{registerForm.role === 'requester' ? 'active' : ''}}"
+              bindtap="selectRole"
+              data-role="requester"
+            >
+              <text>我是求助者</text>
+              <view 
+                class="radio-circle {{registerForm.role === 'requester' ? 'active' : ''}}"
+              ></view>
+            </view>
+            
+            <view 
+              class="radio-option {{registerForm.role === 'volunteer' ? 'active' : ''}}"
+              bindtap="selectRole"
+              data-role="volunteer"
+            >
+              <text>我是志愿者</text>
+              <view 
+                class="radio-circle {{registerForm.role === 'volunteer' ? 'active' : ''}}"
+              ></view>
+            </view>
+          </view>
+        </view>
+        
+        <button 
+          class="register-btn" 
+          loading="{{loading}}"
+          bindtap="handleRegister"
+        >
+          <text wx:if="!loading">注册</text>
+          <text wx:else>注册中...</text>
+        </button>
+        
+        <view class="divider">
+          <text class="divider-text">已有账号？</text>
+        </view>
+        
+        <button 
+          class="login-btn"
+          bindtap="goToLogin"
+        >
+          <text>立即登录</text>
+        </button>
+      </view>
+      
+      <view class="register-footer">
+        <text class="footer-text">注册即表示同意 </text>
+        <text class="link" bindtap="goToAgreement">用户协议</text>
+        <text class="footer-text"> 和 </text>
+        <text class="link" bindtap="goToPrivacy">隐私政策</text>
+      </view>
+    </view>
+  </view>
+</view>

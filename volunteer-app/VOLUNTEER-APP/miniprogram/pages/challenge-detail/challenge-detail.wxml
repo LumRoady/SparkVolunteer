@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{challengeTitle}}</text>
+    <text class="change-task" bindtap="changeTask">更换任务</text>
+  </view>
+  
+  <view class="challenge-detail">
+    <view class="challenge-info">
+      <text class="info-label">挑战描述</text>
+      <text class="info-value">{{challengeDescription}}</text>
+    </view>
+    
+    <view class="challenge-info">
+      <text class="info-label">奖励积分</text>
+      <text class="info-value">{{challengeReward}} 积分</text>
+    </view>
+    
+    <view class="challenge-info">
+      <text class="info-label">联系方式</text>
+      <text class="info-value">{{challengeContact}}</text>
+    </view>
+    
+    <view class="challenge-info">
+      <text class="info-label">活动地址</text>
+      <text class="info-value">{{challengeAddress}}</text>
+    </view>
+    
+    <view class="challenge-info">
+      <text class="info-label">挑战状态</text>
+      <text class="info-value {{challengeCompleted ? 'completed' : 'pending'}}">{{challengeCompleted ? '已完成' : '进行中'}}</text>
+    </view>
+    
+    <view class="challenge-actions">
+      <button class="action-btn" bindtap="goBack">返回</button>
+      <button class="action-btn primary" wx:if="!challengeCompleted" bindtap="cancelChallenge">取消挑战</button>
+    </view>
+  </view>
+</view>

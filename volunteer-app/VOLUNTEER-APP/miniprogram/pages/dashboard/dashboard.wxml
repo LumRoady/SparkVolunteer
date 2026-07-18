@@ -1,0 +1,83 @@
+<view class="dashboard-container {{fontSizeClass}}">
+
+  <view class="user-info">
+    <view class="avatar-container">
+      <view class="avatar">
+        <image wx:if="{{userInfo.avatar}}" src="{{userInfo.avatar}}" class="avatar-image" mode="aspectFill" />
+        <text wx:else class="avatar-icon">👤</text>
+      </view>
+    </view>
+    <view class="user-details">
+      <view class="name-container">
+        <text class="user-name">{{userInfo.name}}</text>
+        <view class="role-badges">
+          <view class="role-badge left">{{userInfo.role}}</view>
+          <view class="role-badge right" wx:if="{{userInfo.region}}">{{userInfo.region}}</view>
+        </view>
+      </view>
+
+      <view class="user-organizations">
+        <view class="organization-list">
+          <text class="organization-item" wx:for="{{userInfo.organizations}}" wx:key="index">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="stats-section">
+    <view class="stat-item">
+      <text class="stat-value">{{stats.completedTasks}}</text>
+      <text class="stat-label">已完成</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">{{userStats.points}}</text>
+      <text class="stat-label">已获积分</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">{{stats.checkinStreak}}</text>
+      <text class="stat-label">连续签到</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">Lv.{{stats.level}}</text>
+      <text class="stat-label">等级</text>
+    </view>
+  </view>
+  
+  <view class="checkin-section">
+    <view class="checkin-container">
+      <view class="checkin-left">
+        <text class="checkin-title">每日签到</text>
+        <button class="checkin-btn" bindtap="checkIn">
+          <text>{{isCheckedIn ? '已签到' : '签到'}}</text>
+        </button>
+      </view>
+      <view class="checkin-right">
+        <text class="checkin-streak-num">{{checkinStreak || 0}}</text>
+        <text class="checkin-streak-label">连续签到天数</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="menu-section">
+    <view class="menu-item" bindtap="goToMyTasks">
+      <text class="menu-icon">📋</text>
+      <text class="menu-label">我的任务</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="goToMyHonors">
+      <text class="menu-icon">🌟</text>
+      <text class="menu-label">我的荣誉</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="showPointsAchievements">
+      <text class="menu-icon">🏆</text>
+      <text class="menu-label">积分成就</text>
+      <text class="menu-arrow">›</text>
+    </view>
+    <view class="menu-item" bindtap="goToSettings">
+      <text class="menu-icon">⚙️</text>
+      <text class="menu-label">设置</text>
+      <text class="menu-arrow">›</text>
+    </view>
+  </view>
+</view>

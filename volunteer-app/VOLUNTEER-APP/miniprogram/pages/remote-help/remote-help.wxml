@@ -1,0 +1,140 @@
+<view class="remote-help-container">
+  <view class="header">
+    <text class="logo-text">星火众擎</text>
+    <text class="subtitle">一键求助，轻松连接志愿者</text>
+  </view>
+  
+  <!-- 蓝牙连接状态 -->
+  <view class="section bluetooth-section">
+    <text class="section-title">设备连接状态</text>
+    <view class="bluetooth-status">
+      <view class="status-indicator" wx:if="{{isConnected}}" style="background-color: #4CAF50; color: white;">
+        已连接
+      </view>
+      <view class="status-indicator" wx:else style="background-color: #e0e0e0; color: #666;">
+        未连接
+      </view>
+      <view class="device-info" wx:if="{{connectedDevice}}">
+        <text class="info-item">设备名称: {{connectedDevice.name}}</text>
+        <text class="info-item">设备ID: {{connectedDevice.id}}</text>
+        <text class="info-item">电池电量: {{batteryLevel}}%</text>
+      </view>
+      <text class="no-device" wx:else>未连接设备</text>
+    </view>
+    <view class="bluetooth-actions">
+      <button 
+        class="action-btn connect" 
+        bindtap="connectToDevice" 
+        disabled="{{isConnecting}}"
+      >
+        {{isConnecting ? '连接中...' : '连接设备'}}
+      </button>
+      <button 
+        class="action-btn disconnect" 
+        bindtap="disconnectFromDevice" 
+        disabled="{{!isConnected}}"
+      >
+        断开连接
+      </button>
+      <button 
+        class="action-btn test" 
+        bindtap="testConnection" 
+        disabled="{{!isConnected}}"
+      >
+        测试连接
+      </button>
+    </view>
+  </view>
+  
+  <view class="content">
+    <view class="section">
+      <text class="section-title">遥控器按钮说明</text>
+      <view class="button-info">
+        <view class="button-item">
+          <text class="button-icon primary">🔴</text>
+          <view class="button-desc">
+            <text class="button-name">紧急求助</text>
+            <text class="button-detail">按下红色按钮，立即向周边志愿者发送紧急求助信号</text>
+          </view>
+        </view>
+        <view class="button-item">
+          <text class="button-icon">🔵</text>
+          <view class="button-desc">
+            <text class="button-name">日常求助</text>
+            <text class="button-detail">按下蓝色按钮，发布日常求助任务（如买菜、取药等）</text>
+          </view>
+        </view>
+        <view class="button-item">
+          <text class="button-icon">🟡</text>
+          <view class="button-desc">
+            <text class="button-name">陪伴需求</text>
+            <text class="button-detail">按下黄色按钮，请求志愿者前来陪伴聊天</text>
+          </view>
+        </view>
+        <view class="button-item">
+          <text class="button-icon">🟢</text>
+          <view class="button-desc">
+            <text class="button-name">确认/感谢</text>
+            <text class="button-detail">按下绿色按钮，确认收到帮助或表达感谢</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">如何使用</text>
+      <view class="steps">
+        <view class="step-item">
+          <text class="step-num">1</text>
+          <text class="step-desc">拿到遥控器，确认电量充足，指示灯亮起</text>
+        </view>
+        <view class="step-item">
+          <text class="step-num">2</text>
+          <text class="step-desc">根据需求按下对应颜色的按钮</text>
+        </view>
+        <view class="step-item">
+          <text class="step-num">3</text>
+          <text class="step-desc">等待志愿者联系您（通常在15分钟内响应）</text>
+        </view>
+        <view class="step-item">
+          <text class="step-num">4</text>
+          <text class="step-desc">接受帮助后，按下绿色按钮表示感谢</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="section">
+      <text class="section-title">安全须知</text>
+      <view class="safety-tips">
+        <view class="tip-item">
+          <text class="tip-icon">⚠️</text>
+          <text class="tip-text">紧急求助按钮仅在真正紧急情况下使用</text>
+        </view>
+        <view class="tip-item">
+          <text class="tip-icon">🔒</text>
+          <text class="tip-text">所有志愿者均经过身份验证，请放心接受帮助</text>
+        </view>
+        <view class="tip-item">
+          <text class="tip-icon">📞</text>
+          <text class="tip-text">如遇问题，请致电客服：400-123-4567</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="action-section">
+    <button class="action-btn" bindtap="goToTasks">
+      <text>查看附近志愿者</text>
+    </button>
+  </view>
+  
+  <!-- 日志显示 -->
+  <view class="logs-section" wx:if="{{logs.length > 0}}">
+    <text class="section-title">操作日志</text>
+    <scroll-view class="logs-container" scroll-y>
+      <text class="log-item" wx:for="{{logs}}" wx:key="index">
+        [{{item.time}}] {{item.message}}
+      </text>
+    </scroll-view>
+  </view>
+</view>

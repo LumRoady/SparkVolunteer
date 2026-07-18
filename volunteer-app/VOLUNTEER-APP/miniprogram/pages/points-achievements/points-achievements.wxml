@@ -1,0 +1,43 @@
+<view class="page">
+  <!-- 等级卡片 -->
+  <view class="level-card">
+    <view class="level-badge">Lv.{{level}}</view>
+    <text class="level-name">{{levelName}}</text>
+    <view class="level-bar-wrap">
+      <view class="level-bar" style="width:{{levelProgress}}%;"></view>
+    </view>
+    <text class="level-next">距{{nextLevelName}}还需 {{pointsToNext}} 积分</text>
+  </view>
+
+  <!-- 数据概览 -->
+  <view class="stats-row">
+    <view class="stat-box">
+      <text class="stat-num">{{userPoints}}</text>
+      <text class="stat-label">累计积分</text>
+    </view>
+    <view class="stat-box">
+      <text class="stat-num">{{completedTasks}}</text>
+      <text class="stat-label">完成任务</text>
+    </view>
+    <view class="stat-box">
+      <text class="stat-num">{{streak}}</text>
+      <text class="stat-label">连续签到</text>
+    </view>
+  </view>
+
+  <!-- 六勋章 -->
+  <view class="badge-section">
+    <text class="section-title">荣誉勋章</text>
+    <view class="badge-grid">
+      <view class="badge-card {{item.unlocked ? 'unlocked' : 'locked'}}" wx:for="{{achievements}}" wx:key="key">
+        <text class="badge-icon">{{item.icon}}</text>
+        <text class="badge-title">{{item.title}}</text>
+        <text class="badge-desc">{{item.desc}}</text>
+        <view class="badge-status">
+          <text wx:if="{{item.unlocked}}">✅ 已解锁</text>
+          <text wx:else>🔒 未解锁</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

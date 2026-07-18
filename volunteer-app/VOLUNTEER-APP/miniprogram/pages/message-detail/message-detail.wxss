@@ -1,0 +1,234 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.message-list {
+  flex: 1;
+  padding: 20rpx;
+  overflow-y: auto;
+}
+
+.message-item {
+  display: flex;
+  margin-bottom: 30rpx;
+  align-items: flex-end;
+}
+
+.message-item.received {
+  flex-direction: row;
+}
+
+.message-item.sent {
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15rpx;
+  flex-shrink: 0;
+}
+
+.message-item.sent .message-avatar {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+}
+
+.avatar {
+  font-size: 28rpx;
+  color: white;
+  font-weight: bold;
+}
+
+.message-content {
+  max-width: 70%;
+}
+
+.message-text {
+  display: inline-block;
+  padding: 15rpx 20rpx;
+  border-radius: 15rpx;
+  font-size: 28rpx;
+  line-height: 1.4;
+  margin-bottom: 5rpx;
+}
+
+.message-item.received .message-text {
+  background: white;
+  color: #2c3e50;
+  border-bottom-left-radius: 5rpx;
+}
+
+.message-item.sent .message-text {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border-bottom-right-radius: 5rpx;
+}
+
+.message-time {
+  font-size: 20rpx;
+  color: #95a5a6;
+  margin-left: 10rpx;
+}
+
+.message-item.sent .message-time {
+  margin-right: 10rpx;
+  margin-left: 0;
+  text-align: right;
+}
+
+.message-input-section {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20rpx;
+  border-top: 1rpx solid #e0e0e0;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+}
+
+.input-tools {
+  margin-right: 10rpx;
+}
+
+.tool-btn {
+  width: 60rpx;
+  height: 60rpx;
+  background: #f8f9fa;
+  color: #7f8c8d;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool-btn::after {
+  border: none;
+}
+
+.message-input {
+  flex: 1;
+  height: 60rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  background-color: #f8f9fa;
+  margin-right: 10rpx;
+}
+
+.voice-input {
+  flex: 1;
+  margin-right: 10rpx;
+}
+
+.voice-btn {
+  width: 100%;
+  height: 60rpx;
+  background: #f8f9fa;
+  color: #7f8c8d;
+  border: 1rpx solid #e0e0e0;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+
+.voice-btn::after {
+  border: none;
+}
+
+.send-btn {
+  width: 90rpx;
+  height: 60rpx;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.send-btn::after {
+  border: none;
+}
+
+/* 联系方式弹窗样式 */
+.contact-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  width: 80%;
+  max-width: 500rpx;
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.modal-contact {
+  display: block;
+  font-size: 36rpx;
+  color: #3498db;
+  text-align: center;
+  margin-bottom: 40rpx;
+  font-weight: bold;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 20rpx;
+}
+
+.modal-btn {
+  flex: 1;
+  height: 70rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.call-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+}
+
+.close-btn {
+  background: #f8f9fa;
+  color: #7f8c8d;
+  border: 1rpx solid #e0e0e0;
+}
+
+.modal-btn::after {
+  border: none;
+}
